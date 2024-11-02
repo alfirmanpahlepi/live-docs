@@ -7,8 +7,9 @@ import {
   // SignedOut,
   // UserButton,
 } from "@clerk/nextjs";
-import { dark } from "@clerk/themes"
+import { dark } from "@clerk/themes";
 import "./globals.css";
+import Provider from "./Provider";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -33,7 +34,9 @@ export default function RootLayout({
       }}
     >
       <html lang="en">
-        <body className={inter.className}>{children}</body>
+        <body className={inter.className}>
+          <Provider>{children}</Provider>
+        </body>
       </html>
     </ClerkProvider>
   );
